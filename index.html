@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teach Me Time!</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/sliders.css">
+
+    <meta name="description" content="A simple web app to help your child learn to tell time.">
+
+    <!-- favicon start -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <!-- favicon end -->
+
+    <!-- opengrapgh start -->
+    <meta property="og:title" content="What Time Is It?">
+    <meta property="og:description" content="A simple web app to help your child learn to tell time.">
+    <meta property="og:url" content="https://arnofaure.github.io/learningtime/">
+    <meta property="og:image" content="https://studionora.ca/opengraph/learningtime.jpg">
+    <meta name="twitter:card" content="summary">
+    <!-- opengraph end -->
+
+    <!-- p5libraries start -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.sound.min.js"></script>
+
+    <script src="sketch.js"></script>
+
+    <!-- p5libraries end -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div class="toosmall">
+    <p>Please enlarge your window or see it on tablet & desktop.</p>
+    <p>Thank you =)</p>
+  </div>
+  <div class="until">
+    <a href="https://untilstudio.ca" target="_blank"><img src="UNTIL-logo-blk.svg" alt="Until Logo"></a>
+  </div>
+    <div class="container">
+        <div class="clock">
+            <h1>Teach Me Time!</h1>
+            <div id="myCanvas"></div>
+        </div>
+
+        <div class="toolBox">
+            <button type="button" name="Learn Button" id="learnBtn">Play with Time</button>
+            <button type="button" name="Show Hours" id="hourBtn">Hide Hours</button>
+            <button type="button" name="Show Min" id="minBtn">Show Minutes</button>
+            <button type="button" name="Show Time" id="timeBtn">Show Time</button>
+
+        <div id="slidersWrapper" class="display-none">
+            <p class="hourColor">Hours</p>
+            <input type="range" id="hourSlider" min="0" max="12" step=".5" value="0">
+            <p class="minColor">Minutes</p>
+            <input type="range" id="minSlider" min="0" max="60" step="1" value="0">
+        </div>
+          </div>
+    </div>
+
+
+    <div class="copyright">
+        Created by Arno & Nil Faure for <a href="hhtps://untilstudio.ca">Until</a> / Copyright 2017 - <a href="https://studionora.ca" target="_blank">studio NØRA</a> under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT Licence</a></p>
+        <p>Fork it on <a href="https://github.com/arnofaure/learningtime" target="_blank">Github</a></p>
+    </div>
+
+</body>
+
+</html>
