@@ -45,6 +45,11 @@ button:hover {
     background-color: var(--realtimeColor);
 }
 
+#timeBtn {
+  background-color: white;
+  color: black;
+}
+
 .realtime {
     background-color: var(--realtimeColor)
 }
@@ -57,7 +62,7 @@ button:hover {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    /*flex-wrap: wrap;*/
+
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -69,7 +74,15 @@ button:hover {
 .clock {
     width: 475px;
     margin-right: 2em;
-    /*margin-bottom: 1em;*/
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  .container {
+    /*flex-wrap: wrap;*/
+    transform: scale(.8);
+  }
 }
 
 .toolBox {
@@ -97,7 +110,7 @@ button:hover {
     position: fixed;
     top: 20px;
     right: 40px;
-    width: 75px;
+    width: 60px;
 }
 
 .until:hover {
@@ -109,6 +122,11 @@ button:hover {
     margin-top: 4em;
     margin-bottom: 1em;
     font-size: 65%;
+    line-height: .7em
+}
+
+.copyright p {
+      color: grey;
 }
 
 .toosmall {
