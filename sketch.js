@@ -12,6 +12,10 @@ var hourIsOn = true;
 var realTime = true;
 var showMeTime = false;
 var mouseOnRectTime = false;
+var digit;
+var mSliderValue = 0;
+var hSliderValue = 0;
+var timeM;
 
 function setup() {
   // create canvas
@@ -46,9 +50,6 @@ function setup() {
   btnLearn.mousePressed(learnOn);
   btnTime = select('#timeBtn');
   btnTime.mousePressed(showTime);
-
-
-
 }
 
 function draw() {
@@ -65,8 +66,11 @@ function draw() {
     var m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI;
     var h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
   } else {
+    //I temporary keep  the "old" code for backup
     var m = map(sliderM.value(), 0, 60, 0, TWO_PI) - HALF_PI;
+    // var m = map(sliderM.value(), 0, 60, 0, TWO_PI) - HALF_PI;
     var h = map(sliderH.value(), 0, 24, 0, TWO_PI * 2) - HALF_PI;
+    // var h = map(sliderM.value(), 0, 60, 0, TWO_PI)/12 - HALF_PI;
   }
 
 
@@ -155,10 +159,11 @@ function draw() {
   fill(0);
   if (showMeTime) {
     if (!realTime) {
-      var mSliderValue = sliderM.value();
-      var hSliderValue = floor(sliderH.value());
-      if (mSliderValue === 60) {
-        var timeM = "00";
+      mSliderValue = sliderM.value();
+      hSliderValue = floor(sliderH.value());
+      if (mSliderValue == 60) {
+        timeM = "00";
+        digit = "";
       } else if (mSliderValue < 10) {
         timeM = mSliderValue;
         digit = 0;
@@ -167,7 +172,11 @@ function draw() {
         digit = "";
       }
       text(hSliderValue + ":" + digit + timeM, cx, cy + clockDiameter / 1.7);
+
+
     } else {
+      mSliderValue = 0;
+      hSliderValue = 0;
       if (hour() > 12) {
         var hour12 = hour() - 12
         var period = "PM";
