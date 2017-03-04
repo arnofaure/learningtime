@@ -46,8 +46,8 @@ button:hover {
 }
 
 #timeBtn {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 .realtime {
@@ -62,7 +62,6 @@ button:hover {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -76,16 +75,14 @@ button:hover {
     margin-right: 2em;
 }
 
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-  .container {
-    /*flex-wrap: wrap;*/
-    transform: scale(.8);
-    height: 100vh;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .container {
+        /*flex-wrap: wrap;*/
+        transform: scale(.8);
+        height: 100vh;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
 .toolBox {
@@ -128,8 +125,17 @@ and (max-device-width : 1024px) {
     line-height: .7em
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .copyright {
+        position: fixed;
+        bottom: 20px;
+        right: 50px;
+        text-align: right;
+    }
+}
+
 .copyright p {
-      color: grey;
+    color: grey;
 }
 
 .toosmall {
