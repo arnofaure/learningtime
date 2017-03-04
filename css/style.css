@@ -82,6 +82,9 @@ and (max-device-width : 1024px) {
   .container {
     /*flex-wrap: wrap;*/
     transform: scale(.8);
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

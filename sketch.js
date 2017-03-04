@@ -42,14 +42,24 @@ function setup() {
   sliderM = select('#minSlider');
   sliders = select('#slidersWrapper');
 
-  btnH = select('#hourBtn');
-  btnH.mousePressed(hourOn);
-  btnM = select('#minBtn');
-  btnM.mousePressed(minOn);
-  btnLearn = select('#learnBtn');
-  btnLearn.mousePressed(learnOn);
-  btnTime = select('#timeBtn');
-  btnTime.mousePressed(showTime);
+  btnLearn = document.getElementById("learnBtn");
+  btnLearn.addEventListener("click", learnOn);
+  btnH = document.getElementById("hourBtn");
+  btnH.addEventListener("click", hourOn);
+  btnM = document.getElementById("minBtn");
+  btnM.addEventListener("click", minOn);
+  btnTime = document.getElementById("timeBtn");
+  btnTime.addEventListener("click", showTime);
+
+  //p5 functions disabled issue >> https://github.com/processing/p5.js/issues/1815
+  // btnTime = select('#timeBtn');
+  // btnTime.mousePressed(showTime);
+  // btnH = select('#hourBtn');
+  // btnH.mousePressed(hourOn);
+  // btnM = select('#minBtn');
+  // btnM.mousePressed(minOn);
+  // btnLearn = select('#learnBtn');
+  // btnLearn.mousePressed(learnOn);
 }
 
 function draw() {
@@ -201,10 +211,12 @@ function draw() {
 function showTime() {
   if (showMeTime) {
     showMeTime = false;
-    btnTime.html('Show Time');
+    // btnTime.html('Show Time');
+    btnTime.innerHTML = 'Show Time';
   } else {
     showMeTime = true;
-    btnTime.html('Hide Time');
+    // btnTime.html('Hide Time');
+    btnTime.innerHTML = 'Hide Time';
   }
 
 }
@@ -212,13 +224,16 @@ function showTime() {
 function learnOn() {
   if (realTime) {
     realTime = false;
-    btnLearn.html('Show Real Time');
+    // btnLearn.html('Show Real Time'); disabled for p5 issue 1815
+    btnLearn.innerHTML = 'Show Real Time';
     if ($('#slidersWrapper').hasClass('display-none')) {
       sliders.removeClass('display-none');
     }
   } else {
     realTime = true;
-    btnLearn.html('Play with Time');
+    // btnLearn.html('Play with Time'); //disabled for p5 issue 1815
+    btnLearn.innerHTML = 'Play with Time';
+
     if (!$('#slidersWrapper').hasClass('display-none')) {
       sliders.addClass('display-none');
     }
@@ -229,19 +244,24 @@ function learnOn() {
 function hourOn() {
   if (hourIsOn) {
     hourIsOn = false;
-    btnH.html('Show Hours');
+    // btnH.html('Show Hours'); disabled for p5 issue 1815
+    btnH.innerHTML = 'Show Hours';
   } else {
     hourIsOn = true;
-    btnH.html('Hide Hours');
+    // btnH.html('Hide Hours'); disabled for p5 issue 1815
+    btnH.innerHTML = 'Hide Hours';
   }
 }
 
 function minOn() {
   if (minIsOn) {
     minIsOn = false;
-    btnM.html('Show Minutes');
+    // btnM.html('Show Minutes'); disabled for p5 issue 1815
+    btnM.innerHTML = 'Show Minutes';
   } else {
     minIsOn = true;
-    btnM.html('Hide Minutes');
+    // btnM.html('Hide Minutes'); disabled for p5 issue 1815
+    btnM.innerHTML = 'Hide Minutes';
+
   }
 }
